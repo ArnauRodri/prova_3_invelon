@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  prova_3:
+    image: app:django
+    container_name: prova_3
+    build:
+      context: .
+      dockerfile: ./django/Dockerfile
+    ports:
+      - 8000:8000
+    command: sh ./docker-entrypoint.sh
+    env_file:
+      - ./django/.env.dev
